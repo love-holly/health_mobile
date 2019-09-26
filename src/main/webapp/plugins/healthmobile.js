@@ -70,7 +70,10 @@ var nums = 30;
 var validateCodeButton;
 //基于定时器实现30秒倒计时效果
 function doLoop() {
-    validateCodeButton.disabled = true;//将按钮置为不可点击
+ /*   alert(validateCodeButton.disabled);*/
+   /* validateCodeButton.disabled = true;//将按钮置为不可点击*/
+    validateCodeButton.disabled=true;
+/*    alert(validateCodeButton.disabled);*/
     nums--;
     if (nums > 0) {
         validateCodeButton.value = nums + '秒后重新获取';

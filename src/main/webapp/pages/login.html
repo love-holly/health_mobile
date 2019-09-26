@@ -47,7 +47,7 @@
                         <input type="checkbox" checked>
                         阅读并同意《传智健康用户协议》《传智健康隐私条款》
                     </div>
-                    <div class="btn yes-btn"><a @click="login()" href="#">登录</a></div>
+                    <div class="btn yes-btn"><a @click="login()">登录</a></div>
                 </form>
             </div>
         </div>
@@ -83,9 +83,12 @@
                         this.$message.error('请输入正确的手机号');
                         return false;
                     }
+
                     axios.post("/login/check.do",this.loginInfo).then((response) => {
+                        alert(response.data.message);
                         if(response.data.flag){
                             //登录成功,跳转到index.html
+
                             window.location.href="index.html";
                         }else{
                             //失败，提示失败信息

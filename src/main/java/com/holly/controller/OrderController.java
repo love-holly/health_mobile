@@ -4,7 +4,7 @@ package com.holly.controller;
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.holly.constant.MessageConstant;
 import com.holly.entity.Result;
-import com.holly.servcie.orderservice;
+import com.holly.servcie.Orderservice;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,10 +12,10 @@ import java.util.Map;
 
 @RequestMapping("/order")
 @RestController
-public class orderController {
+public class OrderController {
 
     @Reference
-    private orderservice orderService;
+    private Orderservice orderService;
 
     @RequestMapping("/findById")
     public Result findById(Integer id){

@@ -7,7 +7,7 @@ import com.holly.constant.MessageConstant;
 import com.holly.constant.RedisMessageConstant;
 import com.holly.entity.Result;
 import com.holly.pojo.Order;
-import com.holly.servcie.validateCodeService;
+import com.holly.servcie.ValidateCodeService;
 import com.holly.util.SMSUtils;
 import com.holly.util.ValidateCodeUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,12 +20,12 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/validateCode")
-public class validateCodeController {
+public class ValidateCodeController {
     @Autowired
     private JedisPool jedisPool;
 
     @Reference
-    private validateCodeService codeService;
+    private ValidateCodeService codeService;
 
     /**
      * 将验证码存入到redis中
